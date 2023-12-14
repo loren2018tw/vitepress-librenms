@@ -1,9 +1,9 @@
-#  virtualbox 虛擬機環境設定
+# virtualbox 虛擬機環境設定
 
-# 安裝 virtualbox 虛擬主機系統
+## 安裝 virtualbox 虛擬主機系統
 1.前往官網，下載後安裝 (https://www.virtualbox.org/)
 
-# 使用 virtualbox 安裝 lubuntu 22.04
+## 使用 virtualbox 安裝 lubuntu 22.04
 
 1. 下載 lubuntu 22.04 iso 檔 （https://lubuntu.me/downloads/）
 2. 執行 vbox ，準備建立一個虛擬機
