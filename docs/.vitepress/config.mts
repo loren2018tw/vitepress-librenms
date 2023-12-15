@@ -28,7 +28,7 @@ export default defineConfig({
             },
             {
               text: "LinreNMS 安裝與使用",
-              link: "/librenms/30-librenm",
+              link: "/librenms/30-librenms/",
             },
           ],
         },
