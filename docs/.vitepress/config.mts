@@ -5,6 +5,7 @@ export default defineConfig({
   title: "librenms 安裝與介紹",
   description: "介紹 snmp 管理系統 - LibreNMS",
   base: "/vitepress-librenms/",
+  ignoreDeadLinks: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -29,6 +30,10 @@ export default defineConfig({
             {
               text: "LinreNMS 安裝與使用",
               link: "/librenms/30-librenms/",
+            },
+            {
+              text: "加入裝置",
+              link: "/librenms/40-add-devices/",
             },
           ],
         },
