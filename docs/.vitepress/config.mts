@@ -26,6 +26,10 @@ export default defineConfig({
               text: "安裝 lubuntu 22.04",
               link: "/librenms/20-install-lubuntu/",
             },
+            {
+              text: "LinreNMS 安裝與使用",
+              link: "/librenms/30-librenm",
+            },
           ],
         },
       ],
