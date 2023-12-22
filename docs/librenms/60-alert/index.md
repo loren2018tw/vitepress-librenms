@@ -42,50 +42,28 @@
 設定警報條件
 ![](2023-12-22-17-03-46.png)
 
-##
+## 警報範本
+有傳送器，有規則，最後還要有警報範本（要傳送的警報內容），這三項缺一不可。
+官方說明有提供範本內容，依據不同規則，我們需要知道的資訊不一樣，所以才需要不同範本。也可以所有規則都套用一個警報範本，只是這樣警報的內容可就會太複雜或是缺少需要的資訊。
+https://docs.librenms.org/Alerting/Templates/
 
-
-
-
-
+底下是一個純文字的警報範本
 ```
-@if ($alert-> state == 0) [[恢復]] @endif
-@if ($alert-> state == 1) [[警報]] @endif
-規則: {{ $alert->name }}
-嚴重: {{ $alert->severity }}
-時間: {{ $alert->timestamp }}
-主機: {{ $alert->hostname }}
-名稱: {{ $alert->sysDescr }}
-IP: {{ $alert->ip }}
-系統: {{ $alert->hardware }}
-說明: {{ $alert->os }}
+{{ $alert->title }}
+嚴重性: {{ $alert->severity }}
+@if ($alert->state == 0) 經過時間: {{ $alert->elapsed }} @endif
+警報時間: {{ $alert->timestamp }} Unique-ID: {{ $alert->uid }} 
+硬體：{{ $alert->hardware }}
+位置：{{ $alert->location }}
 @if ($alert->faults)
+故障:
 @foreach ($alert->faults as $key => $value)
-磁碟: {{ $value['storage_descr'] }}
-容量: {{ $value['storage_size'] }}
-使用率: {{ $value['storage_perc'] }}%
-使用: {{ $value['storage_used'] }}
-剩餘: {{ $value['storage_free'] }}
+  #{{ $key }}: {{ $value['string'] }}
 @endforeach
 @endif
-
-
-@if ($alert-> state == 0) [[恢復]] @endif
-@if ($alert-> state == 1) [[警報]] @endif
-規則: {{ $alert->name }}
-嚴重: {{ $alert->severity }}
-時間: {{ $alert->timestamp }}
-主機: {{ $alert->hostname }}
-OS: {{ $alert->os }}
-IP: {{ $alert->ip }}
-硬體: {{ $alert->hardware }}
-說明: {{ $alert->sysDescr }}
-@if ($alert->faults)
-@foreach ($alert->faults as $key => $value)
-服務: {{ $value['service_desc'] }}
-類別: {{ $value['service_type'] }}
-訊息: {{ $value['service_message'] }}
-參數: {{ $value['service_param'] }}
-@endforeach
-Endif
 ```
+![](2023-12-22-21-22-40.png)
+
+
+接著就等待警報發生吧! >< (聽起來怎麼怪怪的！！)
+
