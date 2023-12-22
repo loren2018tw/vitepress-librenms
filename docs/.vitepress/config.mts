@@ -35,6 +35,16 @@ export default defineConfig({
               text: "加入裝置",
               link: "/librenms/40-add-devices/",
             },
+            ,
+            {
+              text: "資訊看板",
+              link: "/librenms/50-dashboard/",
+            },
+            ,
+            {
+              text: "警報",
+              link: "/librenms/60-alert/",
+            },
           ],
         },
       ],
