@@ -1,12 +1,11 @@
 # 警報
 
-裝置離線或是溫度過高， LibrenNMS 可以發出警報提醒，除了顯示警報在 LireNms 界面外，還可以使用多種通詢方式 ex mail、sms、telegram 通知網管
-以下將介紹使用 telergam 來傳送警報訊息
+裝置離線或是溫度過高， LibrenNMS 可以發出警報提醒，除了顯示警報在 LireNms 界面外，還可以使用多種通知方式 ex: mail、sms、telegram 通知網管，以下將介紹使用 telergam 來傳送警報訊息
 
 ## telegram 安裝及中文化
 可先參考以下網頁，安裝 telegram [telegram 安裝及中文化](https://www.pkstep.com/archives/13832)
 
-# 申請 telegram bot
+## 申請 telegram bot
 
 在 telergram 搜尋 @botfather 這個帳號，然後點入跟這個機器人聊天
 ![](2023-12-22-13-59-45.png)
@@ -44,7 +43,8 @@
 
 ## 警報範本
 有傳送器，有規則，最後還要有警報範本（要傳送的警報內容），這三項缺一不可。
-官方說明有提供範本內容，依據不同規則，我們需要知道的資訊不一樣，所以才需要不同範本。也可以所有規則都套用一個警報範本，只是這樣警報的內容可就會太複雜或是缺少需要的資訊。
+官方說明有提供範本內容，依據不同規則，我們需要知道的資訊不一樣，所以才需要不同範本。例如裝置斷線我們只需要知道是哪台主機跟位置，硬碟容量使用過高，我們會想要知道硬碟空間使用多少、剩餘多少...等。
+也可以所有規則都套用一個警報範本，只是這樣警報的內容可就會太複雜或是缺少需要的資訊。
 https://docs.librenms.org/Alerting/Templates/
 
 底下是一個純文字的警報範本
@@ -67,3 +67,16 @@ https://docs.librenms.org/Alerting/Templates/
 
 接著就等待警報發生吧! >< (聽起來怎麼怪怪的！！)
 
+## 修正時區
+收到警報訊息會發現上面的時間不對， librenms 時區是使用 php 的環境設定，所以要修改 php 的設定檔，執行
+```sh
+sudo nano /etc/php/8.1/fpm/php.ini
+```
+找到 date.timezone 設定，將他修改成 
+```
+date.timezone = "Asia/Taipei"
+```
+然後重啟 php
+```sh
+sudo systemctl restart php8.1-fpm.service
+```
