@@ -14,8 +14,8 @@ export default defineConfig({
       { text: "LibreNMS", link: "/librenms/10-install-vbox/" },
     ],
 
-    sidebar: {
-      "/librenms/": [
+    sidebar:[
+      // "/librenms/":
         {
           text: "LibreNMS",
           items: [
@@ -40,15 +40,17 @@ export default defineConfig({
               text: "資訊看板",
               link: "/librenms/50-dashboard/",
             },
-            ,
             {
               text: "警報",
               link: "/librenms/60-alert/",
             },
+            {
+              text: "Weathermap",
+              link: "/librenms/70-weathermap/",
+            },
           ],
         },
-      ],
-    },
+    ]
 
     // sidebar: [
     //   {

@@ -35,28 +35,32 @@
 username: librenms
 password: CDne3fwdfds
 
-先安裝 nano 文字編輯器（ vi 指令我背不起來）
-`
+先安裝 nano 文字編輯器（ vi 指令我背不起來 >< ）
+```shell
 sudo apt update
 sudo apt install nano
-`
+```
 
 編輯設定檔
 
 ```
 nano /opt/librenms/config.php
 ```
-
-***$config['discovery_by_ip'] = true;***
-
+在設定檔加上以下這一行
+```
+$config['discovery_by_ip'] = true;
+```
 以上設定好， librenms 就會自動探索（6小時一次）
+
+***ps: virtualbox 使用右邊 ctrl 作為脫離虛擬機視窗的按鍵，所以 nano 要存檔及離開，請使用[左側Ctrl+O]、[左側Ctrl+x]***
+
 
 ## 手動 snmp 掃描
 自動探索是利用交換器的 XDP 之間的連線資訊來更新裝置。我們可以使用手動掃描整個網域的 snmp 來強制更新裝置。只要在 /opt/librenms/ 目錄下，執行 #snmp-scan.py -v 即可看到掃描的過程
 
 ```
 cd /opt/librenms/
-snmp-scan.py -v 
+./snmp-scan.py -v 
 ```
 
 
