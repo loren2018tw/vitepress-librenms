@@ -50,7 +50,7 @@ export default defineConfig({
             },
           ],
         },
-    ]
+    ],
 
     // sidebar: [
     //   {
