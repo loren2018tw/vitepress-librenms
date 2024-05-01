@@ -32,6 +32,10 @@ export default defineConfig({
               link: "/librenms/30-librenms/",
             },
             {
+              text: "啟用交換器的 snmp 服務",
+              link: "/librenms/100-enableSnmpd/",
+            },
+            {
               text: "加入裝置",
               link: "/librenms/40-add-devices/",
             },
