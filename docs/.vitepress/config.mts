@@ -10,12 +10,26 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
+      { text: "臺中市教網宣導", link: "/tcedu/10-ncloud/" },
       { text: "LibreNMS", link: "/librenms/10-install-vbox/" },
+      { text: "Examples", link: "/markdown-examples" },
     ],
-
-    sidebar:[
-      // "/librenms/":
+    sidebar: {
+      "/tcedu/": [{ 
+        text: "臺中市教網宣導",
+        items: [
+              { text: "ncloud 功能介紹", link: "/tcedu/10-ncloud/" },              
+              { text: "網路測速", link: "/tcedu/20-iperf3/" }    
+            ]
+      }],
+      "markdown-examples": [{ 
+        text: "Examples",
+        items: [
+              { text: "Markdown Examples", link: "/markdown-examples" },
+              { text: "Runtime API Examples", link: "/api-examples" },
+            ],
+        }],
+      "/librenms/":[
         {
           text: "LibreNMS",
           items: [
@@ -53,8 +67,8 @@ export default defineConfig({
               link: "/librenms/70-weathermap/",
             },
           ],
-        },
-    ],
+        }],
+      },
 
     // sidebar: [
     //   {

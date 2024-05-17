@@ -32,8 +32,10 @@
 ![](2023-12-21-09-17-22.png)
 
 4.自動探索會要求設備要有主機名稱（dns 要設定），預設不使用 ip 增加裝置，所以我們還是必須要去編輯設定檔。登入 librenms 主機終端機
-username: librenms
-password: CDne3fwdfds
+``` tip
+username: vagrant
+password: vagrant
+```
 
 先安裝 nano 文字編輯器（ vi 指令我背不起來 >< ）
 ```shell
