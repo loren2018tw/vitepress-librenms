@@ -5,6 +5,8 @@
 
 ## 使用 virtualbox 安裝 lubuntu 22.04
 
+安裝 lubuntu 只是要讓大家了解一下虛擬機的使用方式，後面 librems 教學不會使用這個安裝好的虛擬機
+
 1. 下載 lubuntu 22.04 iso 檔 （https://lubuntu.me/downloads/）
 2. 執行 vbox ，準備建立一個虛擬機
 ![](2023-12-14-11-42-02.png)
