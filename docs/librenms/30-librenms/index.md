@@ -42,14 +42,53 @@ password: D32fwefwef
 ```
 ![](2023-12-15-19-16-54.png)
 
+
+## 延伸資訊(設定 ipv6)
+虛擬機預設是使用 NAT + dhcp ，如果要增加 ipv6 的支援，建議就不要使用 NAT， Guest 主機改成用「橋接網路」。讓虛擬機有一個獨立的 ip 這樣設定虛擬機的 ipv4 跟 ipv6，就可以更接近一般獨立的 server。
+
+1. 設定 guest 使用橋接模式
+![](2024-05-27-16-05-33.png)
+
+2. 登入 guest 主機，修改主機的網路設定
 虛擬機 ubuntu 作業系統( ssh )的使用者帳密是
 ```
 username: vagrant
 password: vagrant
 ```
+3. 先安裝 nano 文字編輯器
+```shell
+sudo apt update
+sudo apt install nano
+```
+4. 編輯網路設定檔
+```shell
+sudo nano /etc/netplan/01-netcfg.yaml 
+```
+修改內容為以下設定 (ipv4 ipv6 gateway dns) 請自行依據實際內容修改
+```txt
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth:
+      match:
+        name: en*
+      accept-ra: no
+      addresses:
+        - 140.128.179.5/24
+        - 2001:288:5220::05/64
+      gateway4: 140.128.179.254
+      gateway6: 2001:288:5220::ff
+      nameservers:
+        addresses: [1.1.1.3, 2606:4700:4700::1113]
+```
+nano 使用 ctrl+o、ctrl+x 存檔，因為右邊 ctrl被 host 終端攔截了，所以記得要使用左 Ctrl
 
+執行以下指令套用前面的網路設定
+```
+sudo chmod 600 /etc/netplan/01-netcfg.yaml
+sudo netplan apply
+```
 
-## 延伸資訊
-要虛擬機預設是使用 dhcp ，如果要增加 ipv6 的支援，就要修改網路設定，增加 ipv6 的設定。
-ubuntu 22.04 網路設定可參考以下連結。
-[修改網路設定](https://roychou121.github.io/2021/02/03/ubuntu-network/)
+參考資料
+1. (https://www.snel.com/support/how-to-configure-ipv6-with-netplan-on-ubuntu-18-04/)

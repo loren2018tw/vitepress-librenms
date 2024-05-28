@@ -31,7 +31,9 @@ rusuf (https://rufus.ie/zh_TW/)
 ![](2023-12-15-13-55-00.png)
 
 執行以下命列， sudo 允許一般用戶以 root 或其他特定帳號執行程式
-`sudo ./VBoxLinuxAdditions.run `
+```shell
+sudo ./VBoxLinuxAdditions.run `
+```
 
 ![](2023-12-15-13-58-51.png)
 安裝完成後請重新開機，重開機後 guest 就支援畫面更大的解析度，以及 host 跟 guest 雙向剪貼簿功能，可以在一邊複製後，貼到另一邊
