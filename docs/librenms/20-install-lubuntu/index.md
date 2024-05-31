@@ -1,6 +1,10 @@
 # Lubuntu 22.04 安裝 
 
 ## 製作 lubuntu 安裝開機 usb
+::: tip
+這一步驟是要在實體電腦安裝 Lubuntu 才需要製作 Lubuntu 的開機usb，如果是要接續上一章使用虛擬光碟安裝 lubuntu，請略過此步驟。
+:::
+
 1. 下載 lubuntu 22.04 iso 檔，使用軟體製作 usb 開機檔
 
 lubuntu 22.04 (https://lubuntu.me/downloads/)
@@ -16,12 +20,13 @@ rusuf (https://rufus.ie/zh_TW/)
 2.依照安裝指示一直按下一步即可，以下僅顯示需要做選擇或輸入的部份提示
 ![](2023-12-12-08-49-52.png)
 
+ ubuntu 的衍生套件預設不啟用 root 帳號，必須建一個自取帳號名稱的一般帳號，避免惡意程式一開始就知道要用 root 去暴力破解密碼。
 ![](2023-12-12-08-50-07.png)
 
 安裝完成後，移除 usb 後重新開機
 
 ## 安裝 Guest Additions
-為了讓 host主控端要跟虛擬機（guest端）做進階的功能聯繫，所以虛擬機需要安裝 virtualbox 的 guest addition 程式
+為了讓 host主控端要跟虛擬機（guest端）做進階的功能聯繫(剪貼簿互通、顯示驅動...等)，所以虛擬機需要安裝 virtualbox 的 guest addition 程式。
    
 ![](2023-12-14-14-10-57.png)
 
@@ -30,7 +35,7 @@ rusuf (https://rufus.ie/zh_TW/)
 因為必須使用 root 權限執行，我們可以開啟終端機視窗，從檔案總管開啟終端機視窗，會直接跳到目前所在目錄
 ![](2023-12-15-13-55-00.png)
 
-執行以下命列， sudo 允許一般用戶以 root 或其他特定帳號執行程式
+執行以下命令， sudo 允許一般用戶以 root 或其他特定帳號權限執行程式
 ```shell
 sudo ./VBoxLinuxAdditions.run `
 ```
@@ -54,4 +59,4 @@ sudo ./VBoxLinuxAdditions.run `
 
 ## 常用軟體推薦，請試著自己安裝看看
 
-gimp、inkscape、krita... 我就喜歡這種 linux 跟 windows 都有的應用程式，用久就會發現「作業系統」不是重點，應用程式才是。
+gimp、inkscape、krita... 我就喜歡這種 linux 跟 windows 都有的應用程式，用久就會發現用什麼「作業系統」不是重點，應用程式才是。
