@@ -10,9 +10,11 @@ https://docs.librenms.org/Extensions/Weathermap/
 
 使用虛擬機安裝的 linrenms 已經內建 Weathermap 就可以直接使用不需要安裝步驟了。
 
-不過說明文件內缺少了要安裝 php-pear Weathermap 才能正常使用，所以還是要手動安裝 php-pear
+不過說明文件內缺少了要安裝 php-pear Weathermap 才能正常使用，所以還是要手動安裝 php-pear，之後重新啟動 php-fpm (8.1是版本號碼，要依照系統安裝的版本做修改)
+
 ```shell
 sudo apt install php-pear
+sudo systemctl restart php8.1-fpm.service 
 ```
 
 ## 開啟編輯器

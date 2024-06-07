@@ -43,7 +43,8 @@ password: D32fwefwef
 ![](2023-12-15-19-16-54.png)
 
 
-## 延伸資訊(設定 ipv6)
+## 設定 ipv6(選用)
+
 虛擬機預設是使用 NAT + dhcp ，如果要增加 ipv6 的支援，建議就不要使用 NAT， Guest 主機改成用「橋接網路」。讓虛擬機有一個獨立的 ip 這樣設定虛擬機的 ipv4 跟 ipv6，就可以更接近一般獨立的 server。
 
 1. 設定 guest 使用橋接模式
@@ -89,6 +90,14 @@ nano 使用 ctrl+o、ctrl+x 存檔，因為右邊 ctrl被 host 終端攔截了�
 sudo chmod 600 /etc/netplan/01-netcfg.yaml
 sudo netplan apply
 ```
+
+5.「全域設定/系統/伺服器」修改主機名稱
+
+如果有修改主機的 ip，記得需要到「全域設定/系統/伺服器」修改主機名稱（網域名稱或ip位址），不然有些功能的連結會出現  (404 not found) 的錯誤。
+
+![](2024-06-07-08-39-19.png)
+
+
 
 參考資料
 1. (https://www.snel.com/support/how-to-configure-ipv6-with-netplan-on-ubuntu-18-04/)
