@@ -2,7 +2,7 @@
 ncloud 介紹，
 1. [直接看官網的說明](https://www.npartnertech.com/product_d.php?i=3)
 2. [臺中市政府教育局113年網管工作圈第一次工作會議-簡報](https://docs.google.com/presentation/d/1M_bdKWdrOoLZ9AB8WmigGxcBh85bKeHeQN2EDOeTF20/edit)
-3. [IPS封鎖機制及ncloud查找流程](IPS封鎖機制及ncloud查找流程.pdf)
+3. [IPS封鎖機制及ncloud查找流程](https://docs.google.com/presentation/d/e/2PACX-1vRoYUuiYkfTENHnXuumPLUylE3atevFCmokknWJbRyqi32qtZF2qsM01vSjfSafV3nCSYve32ZnpPwK/pub?start=false&loop=false&delayms=3000)
 
 摘要：
 * 各種網路、設備Log資料的集中管理中心
