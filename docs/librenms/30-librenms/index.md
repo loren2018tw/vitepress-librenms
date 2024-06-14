@@ -42,6 +42,17 @@ password: D32fwefwef
 ```
 ![](2023-12-15-19-16-54.png)
 
+## 初始設定
+
+1. 設定中文界面
+
+![](2024-06-14-08-54-07.png)
+
+2. 修正映像檔預設路徑錯誤的 bug
+  映像檔預設的網頁路徑（base url） 有錯誤的文字，要把它清空，不然某些功能的連結會出現 404 NOT FOUND 的錯誤
+
+![](2024-06-14-09-01-11.png)
+
 
 ## 設定 ipv6(選用)
 
@@ -90,14 +101,6 @@ nano 使用 ctrl+o、ctrl+x 存檔，因為右邊 ctrl被 host 終端攔截了�
 sudo chmod 600 /etc/netplan/01-netcfg.yaml
 sudo netplan apply
 ```
-
-5.「全域設定/系統/伺服器」修改主機名稱
-
-如果有修改主機的 ip，記得需要到「全域設定/系統/伺服器」修改主機名稱（網域名稱或ip位址），不然有些功能的連結會出現  (404 not found) 的錯誤。
-
-![](2024-06-07-08-39-19.png)
-
-
 
 參考資料
 1. (https://www.snel.com/support/how-to-configure-ipv6-with-netplan-on-ubuntu-18-04/)
