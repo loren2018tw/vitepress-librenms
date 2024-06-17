@@ -12,7 +12,7 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "臺中市教網宣導", link: "/tcedu/10-ncloud/" },
       { text: "LibreNMS", link: "/librenms/10-install-vbox/" },
-      { text: "Examples", link: "/markdown-examples" },
+      // { text: "Examples", link: "/markdown-examples" },
     ],
     sidebar: {
       "/tcedu/": [{ 
