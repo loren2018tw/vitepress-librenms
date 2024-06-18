@@ -66,6 +66,10 @@ export default defineConfig({
               text: "Weathermap",
               link: "/librenms/70-weathermap/",
             },
+            {
+              text: "Win11 啟用 snmp 服務",
+              link: "/librenms/110-win11enableSnmp/",
+            },
           ],
         }],
       },
