@@ -70,6 +70,11 @@ export default defineConfig({
               text: "Win11 啟用 snmp 服務",
               link: "/librenms/110-win11enableSnmp/",
             },
+            {
+              text: "使用 Proxmox 安裝 Librenms",
+              link: "/librenms/120-proxmox-ct/",
+            },
+           
           ],
         }],
       },
